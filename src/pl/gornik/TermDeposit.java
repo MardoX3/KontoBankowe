@@ -15,7 +15,7 @@ public class TermDeposit {
         this.start = start;
     }
 
-    public double calculateProfit(){
-        return Math.round(amount *(1 + termPercent/100 * timeDeposit/12));
+    public double calculateProfit() {
+        return Math.round(amount * (1 + termPercent / 100 * timeDeposit / 12));
     }
 }

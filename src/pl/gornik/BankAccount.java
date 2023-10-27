@@ -6,16 +6,15 @@ public class BankAccount {
 
     public BankAccount(String numberAccount, double accountBalance) {
         int size = numberAccount.length();
-        if(numberAccount.length() == 26){
+        if (numberAccount.length() == 26 && numberAccount.matches("[0-9 ]*")) {
             this.numberAccount = numberAccount;
-        }
-        else if(numberAccount.length() < 26){
-            for(int i = 0;26- size > i; i++){
+        } else if (numberAccount.length() < 26 && numberAccount.matches("[0-9 ]*")) {
+            for (int i = 0; 26 - size > i; i++) {
                 numberAccount += "0";
             }
             this.numberAccount = numberAccount;
         }
-        if(accountBalance >= 0){
+        if (accountBalance >= 0) {
             this.accountBalance = accountBalance;
         }
     }
@@ -29,7 +28,7 @@ public class BankAccount {
     }
 
     public void setAccountBalance(double accountBalance) {
-        if(accountBalance >= 0){
+        if (accountBalance >= 0) {
             this.accountBalance = accountBalance;
         }
     }
@@ -38,10 +37,11 @@ public class BankAccount {
         return accountBalance;
     }
 
-    public void deposit(double amount){
+    public void deposit(double amount) {
         accountBalance += amount;
     }
-    public void payCheck(double amount){
+
+    public void payCheck(double amount) {
         accountBalance -= amount;
     }
 
